@@ -1,6 +1,11 @@
 const express = require ('express');
 const app = express();
-const profileRoute = require('./adminroute/profileroute')
+const profileRoute = require('./adminroute/profileroute');
+const getConnection = require('./Utils/getConnection');
+require('dotenv').config();
+
+getConnection();
+app.use(express.json());
 
 app.use('/api', profileRoute);
 

@@ -7,7 +7,7 @@ const addProfile = async( req, res)=>{
     try {
         const newProfile = new Profile({
             name , email , location , photo, description
-        })
+        });
         await newProfile.save();
         res.status(201).json({ message: "Profile added successfully", profile: newProfile });
     } 
