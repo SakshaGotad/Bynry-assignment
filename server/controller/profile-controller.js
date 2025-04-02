@@ -46,7 +46,7 @@ const getAllProfile = async(req,res)=>{
    
     try {
          const profiles = await Profile.find({});
-         res.send(query);
+         res.send(profiles);
     } catch (error) {
         res.send(error);
     }
@@ -55,7 +55,8 @@ const getAllProfile = async(req,res)=>{
 
 const profile = async(req, res)=>{
     try {
-        const profiles = await Profile.findById({ _id: req.params.id})
+        const userProfiles = await Profile.findById({ _id: req.params.id})
+        res.send(userProfiles);
     } catch (error) {
         res.send(error);
     }
